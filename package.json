@@ -1,0 +1,28 @@
+{
+  "name": "trusted-frame-forms",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Form supplier for 3rd party websites.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "forms"
+  ],
+  "author": "Mark Lindeman",
+  "license": "EUPL-1.0",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^7.0.11"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/nodemailer": "^7.0.4"
+  }
+}

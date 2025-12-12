@@ -1,0 +1,15 @@
+services:
+  trustedframe:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      APP_URL: ${APP_URL:-http://localhost:3000}
+      CAPTCHA_SECRET: ${CAPTCHA_SECRET:-change-me}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+    restart: unless-stopped

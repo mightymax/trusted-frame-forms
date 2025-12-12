@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "types": [],
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": ["*.js", "types.d.ts"],
+  "exclude": ["node_modules"]
+}

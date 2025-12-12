@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interested?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+    }
+
+    input,
+    button {
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 250px;
+      font-size: 16px;
+    }
+
+    form>div {
+      display: flex;
+      gap: 20px;
+    }
+
+    form>div>p {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 5px;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    #error-message {
+      margin-bottom: 20px;
+      color: red;
+    }
+
+    #error-message:empty {
+      display: none;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      height: 18px;
+    }
+
+    label[for]:has(+ input[required])::after {
+      content: " *";
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Interested?</h1>
+  <div id="error-message">
+    <p>{{ error }}</p>
+  </div>
+  <form method="post" action="{{ formAction }}">
+    <div>
+      <p>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="your name" required />
+        <span class="error">{{ error_name }}</span>
+      </p>
+      <p>
+        <label for="surname">Surname:</label>
+        <input type="text" name="surname" id="surname" placeholder="your surname" required />
+        <span class="error">{{ error_surname }}</span>
+      </p>
+    </div>
+    <div>
+      <p>
+        <label for="email">Email address:</label>
+        <input type="email" name="email" id="email" placeholder="your email address" required />
+        <span class="error">{{ error_email }}</span>
+      </p>
+
+      <p>
+        <label for="company">Company/Organisation:</label>
+        <input type="text" name="company" id="company" placeholder="your company or organisation" required />
+        <span class="error">{{ error_company }}</span>
+      </p>
+    </div>
+    <div>
+      <p>
+        <label for="role">Role:</label>
+        <input type="text" name="role" id="role" placeholder="your role" required />
+        <span class="error">{{ error_role }}</span>
+      </p>
+
+      <!-- Captcha vraag -->
+      <p>
+        <label>
+          Please do the math:
+          <strong> {{ captchaQuestion }}</strong>
+        </label>
+        {{ captchaAnswer }}
+      </p>
+    </div>
+
+
+    <button type="submit">Send</button>
+  </form>
+</body>
+
+</html>

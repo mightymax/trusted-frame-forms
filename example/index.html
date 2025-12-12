@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Formulier Embed Test</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Embedded formulier</h1>
+  <div style="display: flex; gap: 20px;">
+    <div>
+      <p>Als alles goed geconfigureerd is, zou hier rechts het formulier moeten verschijnen.</p>
+      <p>
+        Als je een fout ziet zoals:
+        <br><code>Refused to display ... in a frame because an ancestor violates the Content Security Policy</code>,
+        dan staat dit domein nog niet in de whitelist.
+      </p>
+    </div>
+    <iframe style="margin-top: 0px; height: 600px; border: none;" src="http://localhost:3000/form/utonomy/contact"></iframe>
+  </div>
+</body>
+
+</html>
